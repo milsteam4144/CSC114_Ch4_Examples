@@ -24,7 +24,7 @@ from keras.utils import to_categorical
 
 
 def multi_hot_encode(sequences, num_classes):
-    results = np.zeros((len(sequences), num_classes))
+    results = np.zeros((len(sequences), num_classes), dtype="float32")
     for i, sequence in enumerate(sequences):
         results[i][sequence] = 1.0
     return results
